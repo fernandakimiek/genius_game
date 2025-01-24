@@ -16,11 +16,13 @@ function playTone(frequency) {
   oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
   oscillator.connect(gainNode);
   gainNode.connect(audioContext.destination);
+
   gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
   gainNode.gain.exponentialRampToValueAtTime(
     0.001,
     audioContext.currentTime + 0.3
   );
+
   oscillator.start();
   oscillator.stop(audioContext.currentTime + 0.3);
 }
@@ -28,7 +30,6 @@ function playTone(frequency) {
 const playSound = (element) => {
   switch (true) {
     case element.classList.contains("red"):
-      console.log("red");
       playTone(329.63);
       break;
     case element.classList.contains("blue"):
