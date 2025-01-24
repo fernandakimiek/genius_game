@@ -62,7 +62,7 @@ let lightColor = (element, number) => {
   setTimeout(() => {
     element.classList.add("selected");
     playSound(element);
-  }, number - 250);
+  }, number - 200);
 
   setTimeout(() => {
     element.classList.remove("selected");
@@ -125,7 +125,7 @@ let playGame = () => {
 
   setTimeout(() => {
     nextLevel();
-  }, 250);
+  }, 300);
 };
 
 green.onclick = () => {
