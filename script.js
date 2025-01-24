@@ -62,11 +62,11 @@ let lightColor = (element, number) => {
   setTimeout(() => {
     element.classList.add("selected");
     playSound(element);
-  }, number - 300);
+  }, number - 250);
 
   setTimeout(() => {
     element.classList.remove("selected");
-  }, number - 100);
+  }, number - 50);
 };
 
 let checkOrder = () => {
@@ -121,10 +121,11 @@ let gameOver = () => {
 
 let playGame = () => {
   alert("Bem vindo ao Gênesis! Iniciando novo jogo!");
-  document.getElementById("greenSound").play();
   score = 0;
 
-  nextLevel();
+  setTimeout(() => {
+    nextLevel();
+  }, 250);
 };
 
 green.onclick = () => {
